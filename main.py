@@ -21,5 +21,5 @@ lista_arquivos = os.listdir('nfs')
 
 for arquivo in lista_arquivos:
     pegar_infos(arquivo)
-    break
+    # break
 
