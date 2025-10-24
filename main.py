@@ -16,15 +16,15 @@ def pegar_infos(nome_arquivo):
             peso =  infos_nf['transp']['vol']['pesoB']
             print(numero_nota, empresa_emissora, nome_cliente, endereco, peso, sep='\n')
         except Exception as e:
-            print(e)
-            print(json.dumps(dic_arquivo)) 
+            print(f'ERRO ENCONTRADO {e}')
+            print(json.dumps(dic_arquivo))
 
 
 
 
 
 lista_arquivos = os.listdir('nfs')
-    for arquivo in lista_arquivos:
-        pegar_infos(arquivo)
+for arquivo in lista_arquivos:
+          pegar_infos(arquivo)
     # break
 
