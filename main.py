@@ -3,11 +3,16 @@ import os
 import json
 
 def pegar_infos(nome_arquivo):
-    print(f'Arquivo: {nome_arquivo}')
+    print(f'Pegou as informações: {nome_arquivo}')
     with open(f'nfs/{nome_arquivo}', 'rb') as arquivo_xml:
         dic_arquivo = xmltodict.parse(arquivo_xml)
 
         try: 
+            if 'NFe' in dic_arquivo:
+                 infos_nf = dic_arquivo["NFe"]['infNFe']
+            else:
+                 infos_nf = dic_arquivo["nfeProc"]['NFe']['infNFe']
+
             infos_nf = dic_arquivo["NFe"]['infNFe']
             numero_nota = infos_nf['@Id']
             empresa_emissora = infos_nf['emit']['xNome']
