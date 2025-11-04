@@ -20,6 +20,7 @@ Este projeto tem como objetivo **ler arquivos XML de Notas Fiscais eletrônicas 
   - [`xmltodict`](https://pypi.org/project/xmltodict/) → para converter o XML em dicionário Python;
   - [`os`](https://docs.python.org/3/library/os.html) → para percorrer os arquivos da pasta;
   - [`pandas`](https://pandas.pydata.org/) → para criar e exportar os dados em formato Excel.
+  - [`openpyxl`](https://openpyxl.readthedocs.io/) → engine utilizada pelo pandas para escrever arquivos Excel (`.xlsx`).
 
 ## Como Executar o Projeto
 
