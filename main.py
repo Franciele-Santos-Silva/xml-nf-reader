@@ -2,8 +2,7 @@ import xmltodict
 import os
 import pandas as pd
 
-
-def pegar_infos(nome_arquivo):
+def pegar_infos(nome_arquivo, valores):
     print(f'Pegou as informações: {nome_arquivo}')
     with open(f'nfs/{nome_arquivo}', 'rb') as arquivo_xml:
         dic_arquivo = xmltodict.parse(arquivo_xml)
@@ -20,13 +19,16 @@ def pegar_infos(nome_arquivo):
                 peso =  infos_nf['transp']['vol']['pesoB']
         else:
                 peso = '0'
-        print(numero_nota, empresa_emissora, nome_cliente, endereco, peso, sep='\n')
+        valores.append([numero_nota, empresa_emissora, nome_cliente, endereco, peso])
 
 lista_arquivos = os.listdir('nfs')
 
 colunas = ["numero_nota", "empresa_emissora", "nome_cliente", "endereco", "peso"]
+valores = []
 
 for arquivo in lista_arquivos:
-          pegar_infos(arquivo)
-         # break
+          pegar_infos(arquivo, valores)
+
+tabela = pd.DataFrame(columns= colunas, data= valores)
+print(tabela)
 
