@@ -30,5 +30,5 @@ for arquivo in lista_arquivos:
           pegar_infos(arquivo, valores)
 
 tabela = pd.DataFrame(columns= colunas, data= valores)
-print(tabela)
+tabela.to_excel('Notas_Fiscais.xlsx', index = False)
 
