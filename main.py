@@ -34,3 +34,14 @@ for arquivo in lista_arquivos:
 tabela = pd.DataFrame(columns= colunas, data= valores)
 tabela.to_excel('Notas_Fiscais.xlsx', index = False)
 
+
+
+
+
+
+
+
+
+
+
+
