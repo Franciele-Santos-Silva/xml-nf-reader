@@ -1,5 +1,7 @@
 import xmltodict
 import os
+import pandas as pd
+
 
 def pegar_infos(nome_arquivo):
     print(f'Pegou as informações: {nome_arquivo}')
@@ -22,7 +24,9 @@ def pegar_infos(nome_arquivo):
 
 lista_arquivos = os.listdir('nfs')
 
+colunas = ["numero_nota", "empresa_emissora", "nome_cliente", "endereco", "peso"]
+
 for arquivo in lista_arquivos:
           pegar_infos(arquivo)
-    # break
+         # break
 
